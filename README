@@ -1,0 +1,14 @@
+yahoo MorphologicalAnalysis api
+yahoo形態素解析を呼び出します
+
+see http://developer.yahoo.co.jp/webapi/jlp/ma/v1/parse.html
+
+example
+
+import yahoo
+
+con = yahoo.Condition('YOUR APP ID')
+con.set_sentence(u'明日会社に行くのがとても辛いです')
+con.set_response('surface,reading,pos,feature,baseform')
+ma = yahoo.MorphologicalAnalysis()
+resultset = ma.morph(con)
