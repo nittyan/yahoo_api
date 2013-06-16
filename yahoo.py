@@ -133,9 +133,9 @@ class MorphologicalAnalysis(object):
 			self.condition = condition
 			url = self.URL + condition.to_parameter()
 			response = urllib2.urlopen(url, 'POST')
-		except Error:
+		except:
 			print(url)
-			raise Error
+			raise
 
 		return self.parse_response(response.read())
 
