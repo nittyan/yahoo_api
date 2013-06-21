@@ -135,10 +135,10 @@ class MorphologicalAnalysis(object):
         '''
         try:
             self.condition = condition
-            url = self.URL + condition.to_parameter()
-            response = urllib2.urlopen(url, 'POST')
+            request = urllib2.Request(self.URL, condition.to_parameter())
+            response = urllib2.urlopen(request)
         except:
-            print(url)
+            # print(url)
             raise
 
         return self.parse_response(response.read())
